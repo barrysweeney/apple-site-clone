@@ -1,0 +1,164 @@
+h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: inline;
+}
+
+a {
+  color: rgb(50, 158, 252);
+}
+
+small {
+  color: grey;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 6fr 2fr auto;
+  grid-template-areas: ". main ." ". promos ." ". footer .";
+}
+
+/* Main section */
+.main {
+  grid-area: main;
+  background: url("images/your_verse_hero.jpg") bottom center;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  text-align: center;
+  color: white;
+}
+
+.main a {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+}
+
+.main header {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main header h1 {
+  padding: 10px;
+  font-size: 50px;
+}
+
+.main header a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar in main section */
+.main-nav {
+  height: max-content;
+  display: grid;
+  background: linear-gradient(rgb(65, 58, 58), rgba(156, 154, 154, 0.767));
+  border-radius: 5px;
+  width: 70%;
+  margin: 20px auto;
+}
+
+.main-nav ul {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr) 2fr;
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+}
+
+.main-nav li:first-child {
+  padding-left: 4px;
+}
+
+.main-nav li:hover {
+  background: rgba(0, 0, 0, 0.438);
+}
+
+.main-nav div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 10px;
+}
+
+.main-nav input {
+  width: 100%;
+  background: inherit;
+  border-radius: 5px;
+}
+
+.main-nav input:focus {
+  background: white;
+}
+
+/* Promos section */
+.promos {
+  grid-area: promos;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.promos img {
+  width: 100%;
+}
+
+.page-footer {
+  padding-top: 20px;
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Footer */
+.footer-nav {
+  font-size: 12px;
+}
+
+@media (max-width: 1700px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr auto;
+    grid-template-areas: "main" "promos" "footer";
+  }
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "main" "promos" "footer";
+  }
+
+  /* Navbar in main section */
+  .main-nav ul {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav li {
+    display: grid;
+    place-content: center;
+    width: 100%;
+  }
+
+  /* Promos section */
+  .promos {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  /* Footer */
+  .page-footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    grid-gap: 20px;
+  }
+}
